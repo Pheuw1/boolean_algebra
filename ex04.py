@@ -30,7 +30,7 @@ def print_row(variables, mask : int, resutlt : bool):
     print('|', end=' '); print(*[(mask >> (len(variables) - 1 - i)) & 1 for i in range(len(variables))] + [int(resutlt)  ], sep = " | ", end=' ');print('|')
 
 def print_truth_table(formula: str):
-    variables = [x for x in list(dict.fromkeys(formula)) if x not in operators]
+    variables = [x for x in list(dict.fromkeys(formula)) if x.isalpha()]
     mask = 0; # represents which variables should be set 
     cases = 1 << len(variables)
     print_head(variables)
@@ -42,4 +42,8 @@ def print_truth_table(formula: str):
         print_row(variables, mask, eval_formula(tmp)) # output 
         mask += 1#mask = adder(mask, 1)
         
+print("### Testing Truth Table Generator ###")
+print("usinig formula : A&B|C")
 print_truth_table("AB&C|")
+print("usinig formula : D!&E")
+print_truth_table("D!E&")

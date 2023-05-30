@@ -1,4 +1,5 @@
 from collections import Counter
+import numpy as np
 
 def powerset(set : list[int]) -> list[list[int]]:
     result = []
@@ -17,6 +18,9 @@ powersets = [
         1
     ],
 ]
+
+
+print("### Testing powerset ###")
 
 for p in powersets:
     pwst = (powerset(p))

@@ -26,5 +26,7 @@ tests = [
         (0,100000),
          ]
 
+
+print("### Testing adder ###")
 for a,b in tests:
     print(f"{a} + {b} = {adder(a,b)} || {a+b}")

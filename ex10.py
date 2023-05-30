@@ -13,17 +13,29 @@ def z_order(x : int, y : int) -> float:
     return result / (2**32 - 1)
 
 
-result = []
-for i in     range(0, 2**16 - 1, 1000):
-    for j in range(0, 2**16 - 1, 1000):
-        result.append(map(i,j))
 
-plt.scatter(result,result,c=result, cmap = 'rainbow')
-plt.show()
+def main():
+    result = []
+    for i in     range(0, 2**16 - 1, 1000):
+        for j in range(0, 2**16 - 1, 1000):
+            result.append(map(i,j))
 
-for i in     range(0, 2**16 - 1, 1000):
-    for j in range(0, 2**16 - 1, 1000):
-        result.append(z_order(i,j))
+    print("### Testing Curve ###")
+    print("--------------------")
+    print("First : matrix mapping")
+    print("--------------------")
+    plt.scatter(result,result,c=result, cmap = 'rainbow')
+    plt.show()
 
-plt.scatter(result,result,c=result, cmap = 'rainbow')
-plt.show()
+    for i in     range(0, 2**16 - 1, 1000):
+        for j in range(0, 2**16 - 1, 1000):
+            result.append(z_order(i,j))
+
+    print("Second : z-order mapping")
+    print("--------------------")
+
+    plt.scatter(result,result,c=result, cmap = 'rainbow')
+    plt.show()
+    
+if __name__ == "__main__":
+    main()

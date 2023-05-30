@@ -32,7 +32,6 @@ def sat(formula: str):
             i = (len(variables) - 1) - i # stupid
             tmp = tmp.replace(v, str((mask >> i) & 1))
         if (eval_formula(tmp)): # output
-            print(f"found True output : {tmp}")
             return True 
         mask += 1#mask = adder(mask, 1)
     return False
@@ -45,9 +44,14 @@ given_tests = [
 ("AA^",False)
 ]
 
+print("### Testing SAT ###")
+
+print("-------------------")
+print("given test cases")
+print("-------------------")
 for t in given_tests:
     s = sat(t[0])
-    print(f"{t[0]} -> {s} == {t[1]} | {'o' if  s == t[1] else 'x'}")
+    print(f"{t[0]} -> {s} == {t[1]} | {'pass' if  s == t[1] else 'fail'}")
 
 expressions = [
                 "AB&!",
@@ -57,7 +61,8 @@ expressions = [
                 "AB&C&D&",
                 "A!B!C!&&"
 ]
-
-print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+print("-------------------")
+print("random test cases")
+print("-------------------")
 for e in expressions:
     print(f"{e} -> {sat(e)}")

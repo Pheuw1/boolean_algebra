@@ -38,7 +38,7 @@ expressions = [
    "10&"
 ]
 
-print(" ### Reverse Polish Notation Parser ###")
+print(" ### Testing Reverse Polish Notation Parser ###")
 for e in expressions:
   print("expression :", e)
   print("result =", eval_formula(e), "\n")

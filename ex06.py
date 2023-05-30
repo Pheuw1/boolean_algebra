@@ -202,31 +202,38 @@ given_test = [
 ("AB&!C!|","A!B!C!||"),
 ("AB|!C!&","A!B!C!&&")
 ]  
-# expressions =  [
+expressions =  [
 
-#                 # "AB&!", 
-#                 # "AB|!", 
-#                 # "AB>", 
-#                 # "AB=",
-#                 # "AB|C&!",
-#                 # "AB|C|D|",
-#                 # "AB&C&D&"
-#             "AB&!"
-#             ,"AB|!"
-#             ,"AB|C&"
-#             ,"AB|C|D|"
-#             ,"AB&C&D&"
-#             ,"AB&!C!|"
-#             ,"AB|!C!&"
-#             ]
+                "AB&!", 
+                "AB|!", 
+                "AB>", 
+                "AB=",
+                "AB|C&!",
+                "AB|C|D|",
+                "AB&C&D&"
+            "AB&!"
+            ,"AB|!"
+            ,"AB|C&"
+            ,"AB|C|D|"
+            ,"AB&C&D&"
+            ,"AB&!C!|"
+            ,"AB|!C!&"
+            ]
 
+print("### Testing CNF")
+print("-----------------")
+print("given test cases")
+print("-------------------")
 for t in given_test:
     nnf = negation_normal_form(t[0])
     cnf = conjunctive_normal_form(t[0])
-    print(f"{t[0]} NNF-> {nnf} same? : {nnf == cnf} CNF-> {cnf} == {t[1]} | {'o' if  cnf == t[1] else 'x'}")
+    print(f"{t[0]} NNF-> {nnf} same? : {nnf == cnf} CNF-> {cnf} == {t[1]} | {'pass' if  cnf == t[1] else 'fail'}")
 
-# for e in expressions:
-#     print(f"{e} NNF-> {conjunctive_normal_form(e)}")
+print("-----------------")
+print("chosen test cases")
+print("-------------------")
+for e in expressions:
+    print(f"{e} NNF-> {conjunctive_normal_form(e)}")
     
     
 

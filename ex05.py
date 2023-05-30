@@ -194,6 +194,8 @@ expressions =  [
                 "AB|!C!&"
                 ]
 
+
+print("### Testing NNF ###")
 for e in expressions:
     print(f"{e} NNF-> {negation_normal_form(e)}")
     

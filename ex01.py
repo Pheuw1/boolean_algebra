@@ -26,6 +26,7 @@ tests = [
         (0,100000),
          ] 
 
+print("### Testing multiplier ###")
 for a,b in tests:
     print(f"{a} * {b} = {multiplier(a,b)} || {a * b}")
 
